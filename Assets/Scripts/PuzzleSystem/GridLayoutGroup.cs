@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace PuzzleSystem
@@ -8,6 +9,8 @@ namespace PuzzleSystem
         [SerializeField] private int _rows;
         
         [SerializeField] private RectTransform _puzzleRect;
+
+        private float w, h, baseX, baseY;
         
         private GameObject[] _pieces;
         
@@ -31,12 +34,20 @@ namespace PuzzleSystem
             _pieces = pieces;
             RectTransform rectTransform = GetComponent<RectTransform>();
             
-            float w = rectTransform.rect.width / _cols;
-            float h = rectTransform.rect.height / _rows;
+            w = rectTransform.rect.width / _cols;
+            h = rectTransform.rect.height / _rows;
                         
-            float baseX = rectTransform.localPosition.x - _puzzleRect.rect.width / 2 + w / 2;
-            float baseY = rectTransform.localPosition.y - _puzzleRect.rect.height / 2 + h / 2;
+            baseX = rectTransform.localPosition.x - _puzzleRect.rect.width / 2 + w / 2;
+            baseY = rectTransform.localPosition.y - _puzzleRect.rect.height / 2 + h / 2;
             
+            PositionPieces();
+        }
+
+        
+        
+
+        private void PositionPieces()
+        {
             for (int i = 0; i < _rows; i++)
             {
                 for (int j = 0; j < _cols; j++)
