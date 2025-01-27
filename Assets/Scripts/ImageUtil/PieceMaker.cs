@@ -31,7 +31,7 @@ namespace ImageUtil
 
         private GameObject MakePiece(float w, float h, int col, int row, Transform transform)
         {
-            GameObject piece = new GameObject("Piece");
+            GameObject piece = new GameObject($"Piece{row}_{col}");
             piece.transform.SetParent(transform);
             piece.transform.localScale = Vector3.one;
             piece.transform.localPosition = Vector3.zero;
