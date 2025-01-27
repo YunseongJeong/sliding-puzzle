@@ -1,5 +1,6 @@
 using ImageUtil;
 using UnityEngine;
+using Util;
 
 namespace PuzzleSystem
 {
@@ -26,6 +27,7 @@ namespace PuzzleSystem
         public void SetPieces()
         {
             _pieces = _pieceMaker.GetPieces(_cols, _rows, _gridLayoutGroup.transform);
+            ArrayUtil.ShuffleArray(_pieces);
             _gridLayoutGroup.SetLayout(_cols, _rows);
             _gridLayoutGroup.SetPieces(_pieces);
         }
