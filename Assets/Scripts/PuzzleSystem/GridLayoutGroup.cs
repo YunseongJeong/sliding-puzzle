@@ -44,7 +44,31 @@ namespace PuzzleSystem
         }
 
         
+        public GameObject GetPiece(int index)
+        {
+            return _pieces[index];
+        }
         
+        public GameObject GetPiece(int col, int row)
+        {
+            return _pieces[row * _cols + col];
+        }
+        
+        public int GetIndex(int col, int row)
+        {
+            return row * _cols + col;
+        }
+        
+        public void SwapPieces(GameObject piece1, GameObject piece2)
+        {
+            int index1 = Array.IndexOf(_pieces, piece1);
+            int index2 = Array.IndexOf(_pieces, piece2);
+            
+            _pieces[index1] = piece2;
+            _pieces[index2] = piece1;
+            
+            PositionPieces();
+        }
 
         private void PositionPieces()
         {
@@ -56,6 +80,32 @@ namespace PuzzleSystem
                     _pieces[i * _cols + j].GetComponent<RectTransform>().localPosition = new Vector3(baseX + j * w, baseY + i * h, 0);
                 }
             }
+        }
+
+        public Piece GetEmptyPiece(Piece piece)
+        {
+            int index = Array.IndexOf(_pieces, piece.gameObject);
+            int col = index % _cols;
+            int row = index / _cols;
+            
+            if (col > 0 && !_pieces[index - 1].activeSelf)
+            {
+                return _pieces[index - 1].GetComponent<Piece>();
+            }
+            if (col < _cols - 1 && !_pieces[index + 1].activeSelf)
+            {
+                return _pieces[index + 1].GetComponent<Piece>();
+            }
+            if (row > 0 && !_pieces[index - _cols].activeSelf)
+            {
+                return _pieces[index - _cols].GetComponent<Piece>();
+            }
+            if (row < _rows - 1 && !_pieces[index + _cols].activeSelf)
+            {
+                return _pieces[index + _cols].GetComponent<Piece>();
+            }
+
+            return null;
         }
     }
 }
