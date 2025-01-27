@@ -579,6 +579,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1580651035}
   - component: {fileID: 1580651036}
+  - component: {fileID: 1580651037}
+  - component: {fileID: 1580651038}
   m_Layer: 5
   m_Name: PuzzleController
   m_TagString: Untagged
@@ -618,8 +620,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _texture: {fileID: 2800000, guid: 5a93041c76d8a4afaaa2f9be0a09f4fa, type: 3}
-  _cols: 10
-  _rows: 10
+  _cols: 3
+  _rows: 3
+  _gridLayoutGroup: {fileID: 579940578}
+--- !u!114 &1580651037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580651034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424f782125ab45db92a964d0a9d4148d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _raycaster: {fileID: 1885673232}
+--- !u!114 &1580651038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580651034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fef2751d6d447c686b823a9e402226d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputManager: {fileID: 1580651037}
   _gridLayoutGroup: {fileID: 579940578}
 --- !u!1 &1885673231
 GameObject:
