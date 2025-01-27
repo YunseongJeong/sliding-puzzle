@@ -27,7 +27,7 @@ namespace ImageUtil
                 }
             }
             
-            pieces[rows * cols - 1].SetActive(false);
+            pieces[cols-1].SetActive(false);
             
             return pieces;
         }
