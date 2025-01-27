@@ -1,3 +1,4 @@
+using PuzzleSystem;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,7 +26,9 @@ namespace ImageUtil
                     pieces[i * cols + j] = MakePiece(w, h, j, i, transform);
                 }
             }
-
+            
+            pieces[rows * cols - 1].SetActive(false);
+            
             return pieces;
         }
 
@@ -39,6 +42,7 @@ namespace ImageUtil
             piece.transform.localEulerAngles = Vector3.zero;
                     
             piece.AddComponent<CanvasRenderer>();
+            piece.AddComponent<Piece>();
             RawImage rawImage = piece.AddComponent<RawImage>();
             rawImage.texture = _texture;
             rawImage.uvRect = new Rect(col * w, row * h, w, h);
