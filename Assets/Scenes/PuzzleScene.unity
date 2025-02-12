@@ -179,7 +179,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SetPuzzle
+  m_text: Check Clear
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aeaa7869838d74139af69fd886392318, type: 2}
   m_sharedMaterial: {fileID: -5911603939800486498, guid: aeaa7869838d74139af69fd886392318, type: 2}
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 66.8
   m_fontSizeBase: 90
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -318,8 +318,9 @@ GameObject:
   - component: {fileID: 1184237262}
   - component: {fileID: 1184237264}
   - component: {fileID: 1184237263}
+  - component: {fileID: 1184237265}
   m_Layer: 5
-  m_Name: SetPuzzleButton
+  m_Name: CheckClearButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -389,9 +390,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1580651036}
-        m_TargetAssemblyTypeName: PuzzleSystem.PiecesSetter, Assembly-CSharp
-        m_MethodName: SetPieces
+      - m_Target: {fileID: 1184237265}
+        m_TargetAssemblyTypeName: PuzzleSystem.ClearChecker, Assembly-CSharp
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -409,6 +410,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184237261}
   m_CullTransparentMesh: 1
+--- !u!114 &1184237265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184237261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 001b48efbec74cf8b15e6027fc11dd0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1362756667
 GameObject:
   m_ObjectHideFlags: 0
