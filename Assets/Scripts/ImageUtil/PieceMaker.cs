@@ -42,7 +42,9 @@ namespace ImageUtil
             piece.transform.localEulerAngles = Vector3.zero;
                     
             piece.AddComponent<CanvasRenderer>();
-            piece.AddComponent<Piece>();
+            Piece pieceComponent = piece.AddComponent<Piece>();
+            pieceComponent.col = col;
+            pieceComponent.row = row;
             RawImage rawImage = piece.AddComponent<RawImage>();
             rawImage.texture = _texture;
             rawImage.uvRect = new Rect(col * w, row * h, w, h);
