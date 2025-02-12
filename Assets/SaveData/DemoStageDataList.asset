@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 286a1579b0d1c420e945c6c2592cecb3, type: 3}
+  m_Name: DemoStageDataList
+  m_EditorClassIdentifier: 
+  stageDataList:
+  - stageName: demo0
+    stageImagePath: StageImage/demo-image-0.png
+    n: 3
+    clearText: congratulation
+    clearImagePath: ClearImage/clear-image.png
+  - stageName: demo1
+    stageImagePath: StageImage/demo-image-1.png
+    n: 3
+    clearText: congratulation
+    clearImagePath: ClearImage/clear-image.png
+  - stageName: demo2
+    stageImagePath: StageImage/demo-image-2.png
+    n: 4
+    clearText: congratulation
+    clearImagePath: ClearImage/clear-image.png
+  - stageName: demo3
+    stageImagePath: StageImage/demo-image-3.png
+    n: 4
+    clearText: congratulation
+    clearImagePath: ClearImage/clear-image.png
