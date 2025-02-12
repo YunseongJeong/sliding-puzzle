@@ -15,12 +15,16 @@ namespace PuzzleSystem
         [SerializeField] private GridLayoutGroup _gridLayoutGroup;
         
         private GameObject[] _pieces;
-        
-        
-        private void Start()
+
+
+        public void SetPuzzle(Texture texture, int n)
         {
+            _texture = texture;
+            _cols = n;
+            _rows = n;
+
             _pieceMaker = new PieceMaker(_texture);
-            
+
             SetPieces();
         }
 
