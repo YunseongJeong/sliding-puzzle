@@ -29,4 +29,12 @@ public class SaveLoadSystem : MonoBehaviour
 
         return data;
     }
+    
+    public static Texture LoadTexture(string fileName)
+    {
+        byte[] fileData = File.ReadAllBytes(Path.Combine(Application.persistentDataPath, fileName));
+        Texture2D texture = new Texture2D(2, 2);
+        texture.LoadImage(fileData);
+        return texture;
+    }
 }
