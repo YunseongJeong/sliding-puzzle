@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using PuzzleSystem;
 using UnityEngine;
 
 public class PuzzleInfoObjectReader : MonoBehaviour
@@ -9,12 +10,13 @@ public class PuzzleInfoObjectReader : MonoBehaviour
     private Texture _texture;
     private int _n;
     
+    [SerializeField] PiecesSetter _piecesSetter;
     
     public void Start()
     {
         if (FindPuzzleInfo())
         {
-            //
+            _piecesSetter.SetPuzzle(_texture, _n);
         }
     }
 
