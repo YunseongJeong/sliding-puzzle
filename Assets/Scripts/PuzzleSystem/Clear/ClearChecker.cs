@@ -1,6 +1,7 @@
+using PuzzleSystem.Game;
 using UnityEngine;
 
-namespace PuzzleSystem
+namespace PuzzleSystem.Clear
 {
     public class ClearChecker : MonoBehaviour
     {

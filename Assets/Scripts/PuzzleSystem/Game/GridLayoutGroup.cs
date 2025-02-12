@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace PuzzleSystem
+namespace PuzzleSystem.Game
 {
     public class GridLayoutGroup : MonoBehaviour
     {

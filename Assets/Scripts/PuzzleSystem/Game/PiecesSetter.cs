@@ -2,7 +2,7 @@ using ImageUtil;
 using UnityEngine;
 using Util;
 
-namespace PuzzleSystem
+namespace PuzzleSystem.Game
 {
     public class PiecesSetter : MonoBehaviour
     {

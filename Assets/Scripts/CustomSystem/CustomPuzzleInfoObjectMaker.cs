@@ -1,45 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
+using PuzzleSystem.PuzzleInfo;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CustomPuzzleInfoObjectMaker : MonoBehaviour
+namespace CustomSystem
 {
-    private Texture _texture;
-    private int _n;
+    public class CustomPuzzleInfoObjectMaker : MonoBehaviour
+    {
+        private Texture _texture;
+        private int _n;
 
-    [SerializeField] private RawImage _selectedImage;
-    [SerializeField] private TMP_InputField _nInputField;
+        [SerializeField] private RawImage _selectedImage;
+        [SerializeField] private TMP_InputField _nInputField;
     
-    public void OnClick()
-    {
-        if (GetTexture() && GetN())
+        public void OnClick()
         {
-            PuzzleInfoObject puzzleInfoObject = PuzzleInfoObject.Create(_texture, _n);
-            SceneChanger.ChangeScene("PuzzleScene");
+            if (GetTexture() && GetN())
+            {
+                PuzzleInfoObject puzzleInfoObject = PuzzleInfoObject.Create(_texture, _n);
+                SceneChanger.ChangeScene("PuzzleScene");
+            }
         }
-    }
 
-    private bool GetTexture()
-    {
-        if (_selectedImage.texture == null)
+        private bool GetTexture()
         {
-            Debug.LogError("No image selected");
-            return false;
+            if (_selectedImage.texture == null)
+            {
+                Debug.LogError("No image selected");
+                return false;
+            }
+            _texture = _selectedImage.texture;
+            return true;
         }
-        _texture = _selectedImage.texture;
-        return true;
-    }
     
-    private bool GetN()
-    {
-        string nString = _nInputField.text.Trim();
-        if (!int.TryParse(nString, out _n))
+        private bool GetN()
         {
-            Debug.LogError("Invalid n value");
-            return false;
+            string nString = _nInputField.text.Trim();
+            if (!int.TryParse(nString, out _n))
+            {
+                Debug.LogError("Invalid n value");
+                return false;
+            }
+            return true;
         }
-        return true;
     }
 }

@@ -1,39 +1,39 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using PuzzleSystem;
+using PuzzleSystem.Game;
 using UnityEngine;
 
-public class PuzzleInfoObjectReader : MonoBehaviour
+namespace PuzzleSystem.PuzzleInfo
 {
-    private PuzzleInfoObject _puzzleInfoObject;
-    private Texture _texture;
-    private int _n;
-    
-    [SerializeField] PiecesSetter _piecesSetter;
-    
-    public void Start()
+    public class PuzzleInfoObjectReader : MonoBehaviour
     {
-        if (FindPuzzleInfo())
+        private PuzzleInfoObject _puzzleInfoObject;
+        private Texture _texture;
+        private int _n;
+    
+        [SerializeField] PiecesSetter _piecesSetter;
+    
+        public void Start()
         {
-            _piecesSetter.SetPuzzle(_texture, _n);
+            if (FindPuzzleInfo())
+            {
+                _piecesSetter.SetPuzzle(_texture, _n);
+            }
         }
-    }
 
-    private bool FindPuzzleInfo()
-    {
-        _puzzleInfoObject = FindObjectOfType<PuzzleInfoObject>();
-        if (_puzzleInfoObject == null)
+        private bool FindPuzzleInfo()
         {
-            Debug.LogError("PuzzleInfoObject not found");
-            return false;
-        }
-        else
-        {
-            _texture = _puzzleInfoObject.texture;
-            _n = _puzzleInfoObject.n;
-            Destroy(_puzzleInfoObject.gameObject);
-            return true;
+            _puzzleInfoObject = FindObjectOfType<PuzzleInfoObject>();
+            if (_puzzleInfoObject == null)
+            {
+                Debug.LogError("PuzzleInfoObject not found");
+                return false;
+            }
+            else
+            {
+                _texture = _puzzleInfoObject.texture;
+                _n = _puzzleInfoObject.n;
+                Destroy(_puzzleInfoObject.gameObject);
+                return true;
+            }
         }
     }
 }

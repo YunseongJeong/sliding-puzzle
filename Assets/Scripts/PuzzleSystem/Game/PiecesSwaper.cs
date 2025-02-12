@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
-namespace PuzzleSystem
+namespace PuzzleSystem.Game
 {
     public class PiecesSwaper : MonoBehaviour
     {

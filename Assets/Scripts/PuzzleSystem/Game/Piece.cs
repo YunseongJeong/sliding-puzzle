@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PuzzleSystem
+namespace PuzzleSystem.Game
 {
     public class Piece : MonoBehaviour
     {

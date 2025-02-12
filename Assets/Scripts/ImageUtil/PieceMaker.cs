@@ -1,4 +1,4 @@
-using PuzzleSystem;
+using PuzzleSystem.Game;
 using UnityEngine;
 using UnityEngine.UI;
 
