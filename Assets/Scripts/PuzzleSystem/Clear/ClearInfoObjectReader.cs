@@ -9,11 +9,15 @@ public class ClearInfoObjectReader : MonoBehaviour
     private ClearInfoObject _clearInfoObject;
     private Texture _clearImage;
     private string _clearText;
+    private bool _isCustomGame;
 
     [SerializeField]
     private TMP_Text _clearTextUI;
     [SerializeField]
     private RawImage _clearImageUI;
+    
+    [SerializeField]
+    private GameObject _nextButton;
     
     public void Start()
     {
@@ -21,6 +25,7 @@ public class ClearInfoObjectReader : MonoBehaviour
         {
             _clearTextUI.text = _clearText;
             _clearImageUI.texture = _clearImage;
+            _nextButton.SetActive(!_isCustomGame);
         }
     }
 
@@ -36,6 +41,7 @@ public class ClearInfoObjectReader : MonoBehaviour
         {
             _clearImage = _clearInfoObject.clearImage;
             _clearText = _clearInfoObject.clearText;
+            _isCustomGame = _clearInfoObject.isCustomGame;
             Destroy(_clearInfoObject.gameObject);
             return true;
         }
