@@ -12,7 +12,7 @@ public class PuzzleInfoObject : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public PuzzleInfoObject Create(Texture texture, int n)
+    public static PuzzleInfoObject Create(Texture texture, int n)
     {
         GameObject puzzleInfoObject = new GameObject("PuzzleInfoObject");
         PuzzleInfoObject puzzleInfo = puzzleInfoObject.AddComponent<PuzzleInfoObject>();
